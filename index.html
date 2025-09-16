@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter Abiakwu | Portfolio</title> 
+
+ <!-- Slider + Animations CSS -->
+  <style>
+    /* Slider */
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: slide 12s infinite;
+    }
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% { margin-left: 0; }
+      30% { margin-left: 0; }
+      35% { margin-left: -100%; }
+      65% { margin-left: -100%; }
+      70% { margin-left: -200%; }
+      100% { margin-left: -200%; }
+    }
+
+    /* Fade-in animation for sections */
+    section {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s forwards;
+    }
+    section:nth-of-type(1) { animation-delay: 0.5s; }
+    section:nth-of-type(2) { animation-delay: 1s; }
+    section:nth-of-type(3) { animation-delay: 1.5s; }
+    section:nth-of-type(4) { animation-delay: 2s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Project card hover animation */
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+
+  <!-- Header -->
+  <header style="background: #196801; color: white; text-align: center; padding: 40px 20px;">
+    <h1 style="margin: 0; font-size: 40px;">Peter Abiakwu</h1>
+    <p style="margin-top: 10px; font-size: 18px;">Software Developer | Tech Enthusiast | IT Enthusiast | Programmer</p>
+  </header>
+      <!-- ✅ Slider Section -->
+  <div class="slider">
+    <div class="slides">
+      <img src="img/k.png" alt="Slide 1">
+      <img src="img/ch.png" alt="Slide 2">
+      <img src="img/chi.jpg" alt="Slide 3">
+    </div>
+  </div>
+  <!-- About -->
+  <section style="padding: 40px 20px; text-align: center;">
+    <h2 style="font-size: 28px; margin-bottom: 20px;">About Me</h2>
+    <p style="max-width: 600px; margin: auto; font-size: 16px; line-height: 1.6; color: #444;">
+      Hi, I’m <b>Peter Abiakwu</b>. I specialize in building modern web and mobile applications.
+      Passionate about technology, problem-solving, and delivering user-friendly experiences.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section style="padding: 40px 20px; background: #f4f4f4;">
+    <h2 style="font-size: 28px; text-align: center; margin-bottom: 20px;">Projects</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+
+      <!-- Project Card -->
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://grinapay.com" target="_blank">
+          <img src="img/grinapay.jpg" alt="Fintech App" style="width: 100%; height: auto; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">Fintech App</h3>
+          <p style="font-size: 14px; color: #555;">A mobile app for payments, transfers, and bill management.</p>
+        </div>
+      </div>
+
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://your-ecommerce-link.com" target="_blank">
+          <img src="img/Image.png" alt="E-commerce Platform" style="width: 100%; height: 70%; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">E-commerce Platform</h3>
+          <p style="font-size: 14px; color: #555;">Full-stack online shopping app with payments, cart, and order tracking.</p>
+        </div>
+      </div>
+
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://theinspiredgen.org" target="_blank">
+          <img src="img/326545881_974714343933949_6402236740712558738_n.jpg" alt="Shipping & Cargo" style="width: 100%; height: auto; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">Church Website</h3>
+          <p style="font-size: 14px; color: #555;">A modern church website for sermons, events, donations, and live streaming.</p>
+        </div>
+      </div>
+
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://praisegenerationschool.com" target="_blank">
+          <img src="img/building.gif" alt="School Management System" style="width: 100%; height: auto; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">School Management System</h3>
+          <p style="font-size: 14px; color: #555;">A web system for managing students, teachers, fees, and academics.</p>
+        </div>
+      </div>
+
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://noblestandardschools.org" target="_blank">
+          <img src="img/NEW.jpg" alt="Chat App" style="width: 100%; height: auto; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">School Website</h3>
+          <p style="font-size: 14px; color: #555;">An interactive school website with courses, admission info, news, and student portal.</p>
+        </div>
+      </div>
+
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://www.devdyn.org" target="_blank">
+          <img src="img/Logo_use.webp" alt="NGO Website" style="width: 100%; height: 70%; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">NGO Website</h3>
+          <p style="font-size: 14px; color: #555;">A responsive donation and awareness website for non-profit organizations.</p>
+        </div>
+      </div>
+           <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https:zanpanltd.com" target="_blank">
+          <img src="img/gem.jpg" alt="Fintech App" style="width: 100%; height: 68%; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">Shipping & Cargo Website</h3>
+          <p style="font-size: 14px; color: #555;">A professional logistics platform for cargo booking, tracking, and delivery management.</p>
+        </div>
+      </div>
+          <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://dozzynetenterprise.vercel.app" target="_blank">
+          <img src="img/dozzylogo.png" alt="Fintech App" style="width: 100%; height: 68%; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">ICT website</h3>
+          <p style="font-size: 14px; color: #555;">A modern tech website showcasing innovations, blogs, and digital solutions for businesses.</p>
+        </div>
+      </div>
+       <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://zandpwebsolutions.com" target="_blank">
+          <img src="img/z and p.PNG" alt="Tech Site" style="width: 100%; height: 68%; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">Tech Website</h3>
+          <p style="font-size: 14px; color: #555;">A modern tech website showcasing innovations, blogs, and digital solutions for businesses.</p>
+        </div>
+      </div>
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://biscayschools.com.ng" target="_blank">
+          <img src="img/biskay.PNG" alt="Tech Site" style="width: 100%; height: 68%; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">School Website</h3>
+          <p style="font-size: 14px; color: #555;">An interactive school website with courses, admission info, news, and student portal.</p>
+        </div>
+      </div>
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://ccfils.com.ng" target="_blank">
+          <img src="img/logo3.jpg" alt="Tech Site" style="width: 100%; height: 68%; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">Building and Construction Website</h3>
+          <p style="font-size: 14px; color: #555;">A professional website for showcasing building projects, construction services, and client portfolios.</p>
+        </div>
+      </div>
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://zoropayapp.vercel.app" target="_blank">
+          <img src="img/zoropay.PNG" alt="Tech Site" style="width: 100%; height: 68%; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">Mobile Money App</h3>
+          <p style="font-size: 14px; color: #555;">A mobile app for payments, transfers, and bill management.</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section style="padding: 40px 20px; text-align: center;">
+    <h2 style="font-size: 28px; margin-bottom: 20px;">Contact Me</h2>
+    <p style="font-size: 16px; margin-bottom: 10px;">📧 peterabiakwu@gmail.com</p>
+    <button onclick="alert('Thanks for reaching out, I will get back to you soon!')" 
+      style="padding: 10px 20px; background: #2c3e50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Send Message
+    </button>
+  </section>
+
+ <!-- Footer -->
+  <footer style="background: #196801; color: white; text-align: center; padding: 20px; margin-top: 20px;">
+    <p style="margin: 5px 0;">© 2025 Peter Abiakwu. All rights reserved.</p>
+    <p style="margin: 5px 0; font-size: 14px; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <b>About Us:</b> Dedicated to delivering innovative, user-friendly, and scalable digital solutions across web, mobile, and IT.
+    </p>
+    <p style="margin: 5px 0;">📞 07048967352 | 07035843556</p>
+  </footer>
+</body>
+</html>
