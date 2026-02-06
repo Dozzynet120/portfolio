@@ -52,14 +52,78 @@
       }
     }
 
-    /* Project card hover animation */
-    .project-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+   /* Projects section layout */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Project Card */
+.project-card {
+  background: white;
+  width: 280px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;   /* stack image + content */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;            /* fixed height for all images */
+  object-fit: cover;        /* keeps aspect ratio */
+}
+
+.project-card .content {
+  padding: 20px;
+  flex-grow: 1;             /* make content stretch */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+ /* Contact Button */
+    button {
+      padding: 12px 26px;
+      background: linear-gradient(135deg, #196801, #2c974b);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    button:hover {
+      background: linear-gradient(135deg, #145501, #227a3d);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
     }
+     
+     /* Footer */
+    footer {
+      background: linear-gradient(135deg, #196801, #2c974b);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 20px;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.15);
+    }
+    footer p {
+      margin: 6px 0;
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
   </style>
 </head>
 <body style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
@@ -109,6 +173,26 @@
         <div style="padding: 20px;">
           <h3 style="margin-top: 0;">E-commerce Platform</h3>
           <p style="font-size: 14px; color: #555;">Full-stack online shopping app with payments, cart, and order tracking.</p>
+        </div>
+      </div>
+
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://sabiwriters.com" target="_blank">
+          <img src="img/sabiwriters.jpg" alt="E-commerce Platform" style="width: 100%; height: 70%; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">A writing Hub</h3>
+          <p style="font-size: 14px; color: #555;">Content and booking writing also into all sort of writing and publications.</p>
+        </div>
+      </div>
+
+      <div style="background: white; width: 280px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); overflow: hidden;">
+        <a href="https://royalrhtorics.org" target="_blank">
+          <img src="img/royalrh.jpg" alt="E-commerce Platform" style="width: 100%; height: 70%; display: block;">
+        </a>
+        <div style="padding: 20px;">
+          <h3 style="margin-top: 0;">A Debate and Public Speaking Academy</h3>
+          <p style="font-size: 14px; color: #555;">We train and Mentor young minds in public speaking and debating..</p>
         </div>
       </div>
 
@@ -229,3 +313,4 @@
   </footer>
 </body>
 </html>
+ 
