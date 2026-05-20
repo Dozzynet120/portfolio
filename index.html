@@ -636,7 +636,7 @@
       }
     }
 
-    /* Loading Animation */
+    /* Loading Animation - FIXED */
     .loader {
       position: fixed;
       top: 0;
@@ -645,14 +645,16 @@
       height: 100%;
       background: var(--white);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       z-index: 9999;
-      transition: opacity 0.5s ease;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
 
     .loader.hidden {
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
     }
 
@@ -665,6 +667,29 @@
       animation: spin 1s linear infinite;
     }
 
+    .loader-text {
+      margin-top: 20px;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .loader-close {
+      margin-top: 30px;
+      padding: 8px 20px;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .loader-close.show {
+      opacity: 1;
+    }
+
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
@@ -675,6 +700,8 @@
   <!-- Loader -->
   <div class="loader" id="loader">
     <div class="loader-spinner"></div>
+    <p class="loader-text">Loading portfolio...</p>
+    <button class="loader-close" id="loaderClose" onclick="hideLoader()">Skip Loading</button>
   </div>
 
   <!-- Navigation -->
@@ -696,21 +723,21 @@
   <section class="hero" id="home">
     <div class="slides">
       <div class="slide">
-        <img src="img/k.png" alt="Slide 1">
+        <img src="img/k.png" alt="Slide 1" onerror="this.style.display='none'">
         <div class="slide-content">
           <h1>Welcome to My Portfolio</h1>
           <p>Building Digital Experiences That Matter</p>
         </div>
       </div>
       <div class="slide">
-        <img src="img/ch.png" alt="Slide 2">
+        <img src="img/ch.png" alt="Slide 2" onerror="this.style.display='none'">
         <div class="slide-content">
           <h1>Creative Solutions</h1>
           <p>Transforming Ideas into Reality</p>
         </div>
       </div>
       <div class="slide">
-        <img src="img/chi.jpg" alt="Slide 3">
+        <img src="img/chi.jpg" alt="Slide 3" onerror="this.style.display='none'">
         <div class="slide-content">
           <h1>Let's Work Together</h1>
           <p>Your Vision, My Expertise</p>
@@ -793,7 +820,7 @@
       <!-- Project 1 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/grinapay.jpg" alt="Fintech App">
+          <img src="img/grinapay.jpg" alt="Fintech App" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Fintech+App'">
           <div class="project-overlay">
             <a href="https://grinapay.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -814,7 +841,7 @@
       <!-- Project 2 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/Image.png" alt="E-commerce Platform">
+          <img src="img/Image.png" alt="E-commerce Platform" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=E-commerce'">
           <div class="project-overlay">
             <a href="https://vickystores.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -835,7 +862,7 @@
       <!-- Project 3 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/sabiwriters.jpg" alt="Writing Hub">
+          <img src="img/sabiwriters.jpg" alt="Writing Hub" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Writing+Hub'">
           <div class="project-overlay">
             <a href="https://sabiwriters.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -856,7 +883,7 @@
       <!-- Project 4 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/royalrh.jpg" alt="Debate Academy">
+          <img src="img/royalrh.jpg" alt="Debate Academy" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Debate+Academy'">
           <div class="project-overlay">
             <a href="https://royalrhtorics.org" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -877,7 +904,7 @@
       <!-- Project 5 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/326545881_974714343933949_6402236740712558738_n.jpg" alt="Church Website">
+          <img src="img/326545881_974714343933949_6402236740712558738_n.jpg" alt="Church Website" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Church+Website'">
           <div class="project-overlay">
             <a href="https://theinspiredgen.org" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -898,7 +925,7 @@
       <!-- Project 6 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/building.gif" alt="School Management">
+          <img src="img/building.gif" alt="School Management" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=School+System'">
           <div class="project-overlay">
             <a href="https://praisegenerationschool.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -919,7 +946,7 @@
       <!-- Project 7 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/NEW.jpg" alt="School Website">
+          <img src="img/NEW.jpg" alt="School Website" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=School+Website'">
           <div class="project-overlay">
             <a href="https://noblestandardschools.org" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -940,7 +967,7 @@
       <!-- Project 8 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/Logo_use.webp" alt="NGO Website">
+          <img src="img/Logo_use.webp" alt="NGO Website" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=NGO+Website'">
           <div class="project-overlay">
             <a href="https://www.devdyn.org" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -961,7 +988,7 @@
       <!-- Project 9 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/gem.jpg" alt="Shipping & Cargo">
+          <img src="img/gem.jpg" alt="Shipping & Cargo" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Shipping+Cargo'">
           <div class="project-overlay">
             <a href="https://zanpanltd.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -982,7 +1009,7 @@
       <!-- Project 10 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/dozzylogo.png" alt="ICT Website">
+          <img src="img/dozzylogo.png" alt="ICT Website" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=ICT+Website'">
           <div class="project-overlay">
             <a href="https://dozzynetenterprise.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -1003,7 +1030,7 @@
       <!-- Project 11 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/z and p.PNG" alt="Tech Website">
+          <img src="img/z and p.PNG" alt="Tech Website" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Tech+Website'">
           <div class="project-overlay">
             <a href="https://zandpwebsolutions.com" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -1024,7 +1051,7 @@
       <!-- Project 12 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/biskay.PNG" alt="School Website">
+          <img src="img/biskay.PNG" alt="School Website" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=School+Website'">
           <div class="project-overlay">
             <a href="https://biscayschools.com.ng" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -1045,7 +1072,7 @@
       <!-- Project 13 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/logo3.jpg" alt="Construction Website">
+          <img src="img/logo3.jpg" alt="Construction Website" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Construction'">
           <div class="project-overlay">
             <a href="https://ccfils.com.ng" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -1066,7 +1093,7 @@
       <!-- Project 14 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="img/zoropay.PNG" alt="Mobile Money App">
+          <img src="img/zoropay.PNG" alt="Mobile Money App" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Mobile+Money'">
           <div class="project-overlay">
             <a href="https://zoropayapp.vercel.app" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -1084,10 +1111,10 @@
         </div>
       </div>
 
-      <!-- Project 15 - New Placeholder -->
+      <!-- Project 15 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Portfolio Dashboard">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop" alt="Analytics Dashboard" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Analytics'">
           <div class="project-overlay">
             <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -1105,10 +1132,10 @@
         </div>
       </div>
 
-      <!-- Project 16 - New Placeholder -->
+      <!-- Project 16 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" alt="Real Estate Platform">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" alt="Real Estate Platform" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Real+Estate'">
           <div class="project-overlay">
             <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -1126,10 +1153,10 @@
         </div>
       </div>
 
-      <!-- Project 17 - New Placeholder -->
+      <!-- Project 17 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=300&fit=crop" alt="Healthcare App">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=300&fit=crop" alt="Healthcare App" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Healthcare'">
           <div class="project-overlay">
             <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -1147,10 +1174,10 @@
         </div>
       </div>
 
-      <!-- Project 18 - New Placeholder -->
+      <!-- Project 18 -->
       <div class="project-card">
         <div class="image-wrapper">
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop" alt="Restaurant Platform">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop" alt="Restaurant Platform" onerror="this.src='https://via.placeholder.com/400x300/196801/ffffff?text=Restaurant+POS'">
           <div class="project-overlay">
             <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
           </div>
@@ -1221,12 +1248,28 @@
   </footer>
 
   <script>
-    // Loader
-    window.addEventListener('load', function() {
+    // Hide loader function
+    function hideLoader() {
+      const loader = document.getElementById('loader');
+      if (loader) {
+        loader.classList.add('hidden');
+      }
+    }
+
+    // Hide loader when DOM is ready (fastest)
+    document.addEventListener('DOMContentLoaded', function() {
+      // Show skip button after 2 seconds
       setTimeout(function() {
-        document.getElementById('loader').classList.add('hidden');
-      }, 500);
+        const closeBtn = document.getElementById('loaderClose');
+        if (closeBtn) closeBtn.classList.add('show');
+      }, 2000);
+
+      // Auto-hide after 3 seconds max
+      setTimeout(hideLoader, 3000);
     });
+
+    // Also hide on window load (if it ever fires)
+    window.addEventListener('load', hideLoader);
 
     // Mobile Menu Toggle
     function toggleMenu() {
