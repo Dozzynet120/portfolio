@@ -113,7 +113,7 @@
 
     /* Hero Section */
     .hero {
-      margin-top: 60px;
+      margin-top: 0;
       position: relative;
       width: 100%;
       height: 500px;
@@ -185,26 +185,24 @@
 
     /* Section Styling */
     section {
-      padding: 80px 5%;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: fadeInUp 0.8s forwards;
+      padding: 60px 5%;
+      opacity: 1;
+      transform: translateY(0);
     }
 
-    section:nth-of-type(2) { animation-delay: 0.2s; }
-    section:nth-of-type(3) { animation-delay: 0.4s; }
-    section:nth-of-type(4) { animation-delay: 0.6s; }
-    section:nth-of-type(5) { animation-delay: 0.8s; }
+    section:nth-of-type(2) { }
+    section:nth-of-type(3) { }
+    section:nth-of-type(4) { }
+    section:nth-of-type(5) { }
 
     .section-title {
       text-align: center;
       font-size: 36px;
-      margin-bottom: 50px;
+      margin: 0 auto 50px auto;
       color: var(--primary);
       position: relative;
-      display: inline-block;
-      left: 50%;
-      transform: translateX(-50%);
+      display: block;
+      width: fit-content;
     }
 
     .section-title::after {
@@ -223,6 +221,7 @@
     .about {
       background: var(--white);
       text-align: center;
+      padding-top: 40px;
     }
 
     .about-content {
@@ -437,6 +436,7 @@
     .contact {
       background: var(--white);
       text-align: center;
+      padding-top: 40px;
     }
 
     .contact-grid {
@@ -694,6 +694,7 @@
       to { transform: rotate(360deg); }
     }
   </style>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -1325,8 +1326,8 @@
     }, observerOptions);
 
     document.querySelectorAll('.project-card, .skill-card, .contact-card, .stat-item').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
       el.style.transition = 'all 0.6s ease';
       observer.observe(el);
     });
